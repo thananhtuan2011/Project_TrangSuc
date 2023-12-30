@@ -1,0 +1,45 @@
+<main>
+  <article>
+    <section style="padding-bottom: 20px">
+      <center>
+        <div class="checkout-panel">
+          <div class="panel-body">
+            <h2 class="title">Checkout here!</h2>
+            <div class="progress-bar">
+              <div class="step active"></div>
+              <div class="step active"></div>
+              <div class="step"></div>
+              <div class="step"></div>
+            </div>
+            <p>You can skip this step and add it to the confirmation email</p>
+            <iframe
+              id="my-iframe"
+              src="/card"
+              style="width: 100%; border: none"
+            ></iframe>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <button class="btn btn-secondary" id="back" routerLink="/info-detail">Back</button>
+          <button class="btn btn-primary" id="next" routerLink="/finish">Next</button>
+        </div>
+      </center>
+    </section>
+  </article>
+</main>
+<script src='https://unpkg.com/ionicons@5.1.2/dist/ionicons.js'></script><script  src="../../../assets/js/card.js"></script>
+<!-- Thêm div cho hiển thị thông tin -->
+<div id="infoModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('infoModal').style.display='none'">&times;</span>
+    <h2>Customer and Cart Data</h2>
+    <div>
+      <h3>Customer Data:</h3>
+      <pre>{{ cusData }}</pre>
+    </div>
+    <div>
+      <h3>Cart Data:</h3>
+      <pre>{{ cartData}}</pre>
+    </div>
+  </div>
+</div>

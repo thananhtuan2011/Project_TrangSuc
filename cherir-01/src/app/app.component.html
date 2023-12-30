@@ -1,0 +1,6 @@
+<app-header *ngIf="!isIgnore" [cart]="cart"  [wishlist]="wishlist"></app-header>
+<app-mobile-navbar *ngIf="!isIgnore"></app-mobile-navbar>
+<router-outlet></router-outlet>
+<app-footer *ngIf="!isIgnore"></app-footer>
+
+    

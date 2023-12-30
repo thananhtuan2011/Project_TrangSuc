@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+      <ul class="tab_menu" >
+        <li (click)="onColumnsUpdated(1)" class="active"><a><span class="lnr lnr-list"></span></a></li>
+        <!--<li (click)="onColumnsUpdated(4)"><a><span class="lnr lnr-list"></span></a></li>-->
+      </ul>
+    </div>
+    <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
+      <div class="product-option">
+        <div class="porduct-option-left floatleft">
+          
+        </div>
+        <div class="product-option-right floatright">
+          <div class="sort-by">
+            <label>Sort By:</label>
+            <select class="cust-select" (change)="onSortUpdated($event)">
+              <option selected="selected" value="desc">Desc</option>
+              <option value="asc">Asc</option>
+            </select>
+          
+          </div>
+          <div class="sort-by">
+            <label>Show:</label>
+            <select class="cust-select cust-select-2" (change)="onItemsUpdated($event)">
+              <option selected="selected" value="8">8</option>
+              <option value="12">12</option>
+              <option value="24">24</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

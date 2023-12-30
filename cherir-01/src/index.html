@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chérir</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+    <!-- custom css link -->
+   <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora"
+      rel="stylesheet"
+    />
+      
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+  <body>
+    <app-root></app-root>
+
+    <!-- ### Scripts ### -->
+    <!-- custom js link -->
+    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/scripthome.js" defer></script>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        const iframe = document.getElementById("my-iframe");
+        iframe.onload = function () {
+          iframe.style.height =
+            iframe.contentWindow.document.body.scrollHeight + "px";
+        };
+      });
+
+      document.getElementById("back").addEventListener("click", function () {
+        window.location.href = "/info-detail";
+      });
+      ocument.getElementById("next").addEventListener("click", function () {
+        window.location.href = "#";
+      });
+    </script>
+
+    <!-- ionicon link -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,273 @@
+<div class="ques">
+    <h1>FAQ! Need Help?</h1>
+    <h3> We've got you covered!</h3>
+</div>
+
+    <div class="social">
+        <div class="note">Still need our help? Hit us up below.
+            <br> If you're getting in touch regarding an order, don't forget to include your order number.</div>
+            <div class="buttons" >
+                <a href="https://www.google.com" class="button">FACEBOOK</a>
+                <a href="https://www.google.com" class="button">EMAIL</a>
+                <a href="https://www.google.com" class="button">INSTAGRAM</a>
+            </div>          
+    </div>   
+
+<!-- 
+    <div class="search-bar">
+        <label for ="search"> TRACK YOUR ORDER</label>
+        <input type="text" id ="search" >
+        <button class="track">TRACK</button>
+    </div>
+ -->
+
+
+<div class="box-container" >
+    <div class="faq-box">
+        <div style="display: flex; justify-content: center; align-items: center">
+            <img src="assets/img/order.png" >
+        </div>
+      <h2>ORDERS</h2>
+    </div>
+    <div class="faq-box" onclick="goToTop('delivery')">
+        <div style="display: flex; justify-content: center; align-items: center; ">
+            <img src="assets/img/deliver.png">
+        </div> 
+      <h2>DELIVERY</h2>
+    </div>
+    <div class="faq-box" onclick="goToTop('return')">
+        <div style="display: flex; justify-content: center; align-items: center">
+            <img src="assets/img/return.png">
+        </div> 
+        <h2 >RETURNS & REFUNDS</h2>
+    </div>
+  </div>
+  <div class="box-container">
+    <div class="faq-box" onclick="goToTop('promotion')">
+        <div style="display: flex; justify-content: center; align-items: center">
+            <img src="assets/img/money.png">
+        </div> 
+      <h2>PROMOTIONS & DISCOUNT</h2>
+    </div>
+    <div class="faq-box" onclick="goToTop('product')">
+        
+        <div style="display: flex; justify-content: center; align-items: center">
+            <img src="assets/img/product.png">
+        </div> 
+        
+      <h2>PRODUCTS & STOCK</h2>
+    </div>
+    <div class="faq-box" onclick="goToTop('technical')">
+        <div style="display: flex; justify-content: center; align-items: center">
+            <img src="assets/img/system.png">
+        </div> 
+      <h2>TECHNICAL</h2>
+    </div>
+  </div>
+  <div class="ques">
+    <h1 >GENARAL QUESTIONS</h1>
+  </div>
+ 
+  <div class="tques">
+    <h2 id="orders">ORDERS</h2>
+<table>
+    <tr>
+      <td>I NEED TO CHANGE MY ORDERS!</td>
+      <td>
+        <button class="button" (click)="toggleRow1(1)">{{ showRow1_1 ? 'COMPACT' : 'READ MORE' }}</button>
+      </td>
+    </tr>
+    <tr *ngIf="showRow1_1">
+      <td colspan="2">Reach out to the customer service department of the company from which you ordered the jewelry.</td>
+    </tr>
+    <tr>
+      <td>CAN I EDIT OR CANCEL MY ORDER ONCE IT'S PLACED?</td>
+      <td>
+        <!-- Thay đổi tham số của hàm toggleRow1 thành 2, tương ứng với dòng thứ hai -->
+        <button class="button" (click)="toggleRow1(2)">{{ showRow1_2 ? 'COMPACT' : 'READ MORE' }}</button>
+      </td>
+    </tr>
+    <tr *ngIf="showRow1_2">
+      <td colspan="2">Our goal is to process and ship orders quickly. Once you have received your confirmation email, the order has already been sent for processing and cannot be adjusted or cancelled.</td>
+    </tr>
+  </table>
+  
+  
+    </div>
+
+
+  <div class="tques">
+    <h2 id ="delivery">DELIVERY</h2>
+    <!-- app.component.html -->
+<table>
+    <tr>
+      <td>WHAT ARE YOUR DELIVERY OPTION?</td>
+      <td>
+        <!-- Thay đổi tham số của hàm toggleRow2 thành 1, tương ứng với dòng đầu tiên -->
+        <button class="button" (click)="toggleRow2(1)">{{ showRow2_1 ? 'COMPACT' : 'READ MORE' }}</button>
+      </td>
+    </tr>
+    <tr *ngIf="showRow2_1">
+      <td colspan="2">We offers a Jewelry Shipping Program for some account holders, which allows eligible shippers to declare a value of up to USD$100,000 per domestic shipment and up to USD$25,000 to select international destinations on specialty items like jewelry, gemstones, and precious metals</td>
+    </tr>
+    <tr>
+      <td>DO YOU OFFER EXPEDITED DELIVERY?</td>
+      <td>
+        <!-- Thay đổi tham số của hàm toggleRow2 thành 2, tương ứng với dòng thứ hai -->
+        <button class="button" (click)="toggleRow2(2)">{{ showRow2_2 ? 'COMPACT' : 'READ MORE' }}</button>
+      </td>
+    </tr>
+    <tr *ngIf="showRow2_2">
+      <td colspan="2">The cheapest way to ship jewelry or accessories is USPS First Class Package Service with online shipping software or the Priority Mail Flat Rate Envelope</td>
+    </tr>
+    <tr>
+      <td>HOW LONG WILL IT TAKE FOR MY ORDER ARRIVE?</td>
+      <td>
+        <!-- Thay đổi tham số của hàm toggleRow2 thành 3, tương ứng với dòng thứ ba -->
+        <button class="button" (click)="toggleRow2(3)">{{ showRow2_3 ? 'COMPACT' : 'READ MORE' }}</button>
+      </td>
+    </tr>
+    <tr *ngIf="showRow2_3">
+      <td colspan="2">The delivery time for your jewelry order can vary depending on the specific requirements of the order and the shipping method chosen. Here are some general timelines:
+                  Orders are usually processed within 1-3 business days.
+                  Some popular styles can be shipped out within 24 hours, while engraved or custom orders may take 7-12 working days.</td>
+    </tr>
+  </table>
+  
+  </div>
+
+  <div class="tques">
+    <h2 id = "return">RETURNS & REFUNDS</h2>
+  <table>
+      <tr>
+          <td>WHAT IS YOUR RETURNS POLICY?</td>
+          <td > 
+              <button  class="button"(click)="toggleRow3(1)">{{ showRow3_1 ? 'COMPACT' : 'READ MORE' }} </button>
+          </td>
+      </tr>
+      <tr *ngIf="showRow3_1">
+      <td colspan="2">
+        The cheapest way to ship jewelry or accessories is USPS First Class Package Service with online shipping software or the Priority Mail Flat Rate Envelope
+                </td>
+      <tr>
+        <td>HOW MUCH DOES IT COST TO RETURN AN ITEM?</td>
+        <td> <button class="button" (click)="toggleRow3(2)">{{ showRow3_2 ? 'COMPACT' : 'READ MORE' }}</button></td>
+    </tr>
+    <tr *ngIf="showRow3_2">
+        <td colspan="2">
+        If you wish to return your items to us, we offer FREE returns for UK Customers.
+We're sorry, but we are unable to offer free returns for international customers        </td>
+      <tr>
+          <td>DO YOU REFUND THE DELIVERY CHARGE?</td>
+          <td> <button class="button" (click)="toggleRow3(3)">{{ showRow3_3 ? 'COMPACT' : 'READ MORE' }}</button></td>
+      </tr>
+      <tr *ngIf="showRow3_3">
+        <td colspan="2">
+        Unfortunately we do not refund delivery charges on any orders. Unless you have contracted as a consumer in the EEA and you have cancelled your Contract under clause 5 of the Terms and Conditions, in which case we will refund delivery charges you have paid for delivery of the products to you, although the maximum refund for delivery will be the least expensive delivery method we offer to your delivery destination.
+            </td>
+      <tr>
+          <td>CAN I RETURN MORE THAN ONE ORDER IN ONE PARCEL?</td>
+          <td> <button class="button" (click)="toggleRow3(4)">{{ showRow3_4 ? 'COMPACT' : 'READ MORE' }} </button></td>
+      </tr>
+      <tr *ngIf="showRow3_4">
+        <td colspan="2">
+        Please keep your orders separate, as returning more than one order in a parcel may delay your refund.
+            </td>
+      
+  </table>
+</div>
+
+<div class="tques">
+  <h2 id ="promotion">PROMOTION & DISCOUNT</h2>
+  <table >
+      <tr>
+        <td>HOW DO I USE A PROMOTIONAL CODE?<td>
+        <td> <button class="button" (click)="toggleRow4(1)">{{ showRow4_1 ? 'COMPACT' : 'READ MORE' }}</button></td>
+    </tr>
+    <tr *ngIf="showRow4_1">
+        <td colspan="2">
+        We offers a Jewelry Shipping Program for some account holders, which allows eligible shippers to declare a value of up to USD$100,000 per domestic shipment and up to USD$25,000 to select international destinations on specialty items like jewelry, gemstones, and precious metals2
+            </td>
+            </tr>
+      <tr>
+          <td>HOW CAN I GET DISCOUNT?<td>
+          <td> <button class="button"(click)="toggleRow4(2)">{{ showRow4_2 ? 'COMPACT' : 'READ MORE' }}</button></td>
+      </tr>
+      <tr *ngIf="showRow4_2">
+        <td colspan="2">
+        The cheapest way to ship jewelry or accessories is USPS First Class Package Service with online shipping software or the Priority Mail Flat Rate Envelope3.
+            </td>
+      </tr>
+     
+  </table>
+</div>
+
+  <div class="tques">
+    <h2 id = "product">PRODUCTS</h2>
+  <table>
+      <tr>
+          <td>HOW TO CHOOSE THE RIGHT JEWELRY SIZES?</td>
+          <td > 
+              <button  class="button" (click)="toggleRow5(1)">{{ showRow5_1 ? 'COMPACT' : 'READ MORE' }}</button>
+          </td>
+      </tr>
+      <tr *ngIf="showRow5_1">
+        <td colspan="2">
+        Measure your finger at the end of the day when it is at its largest.
+Avoid measuring your finger when it is hot or cold as this can affect the size.
+Remember that the two hands differ slightly in size, so measure the specific finger on which you plan to wear the ring.        </td>
+      <tr>
+          <td>HOW TO PRESERVE JEWELRY?</td>
+          <td> <button class="button" (click)="toggleRow5(2)">{{ showRow5_2 ? 'COMPACT' : 'READ MORE' }}</button></td>
+      </tr>
+      <tr *ngIf="showRow5_2">
+        <td colspan="2">
+        Separate your jewelry by metal type to prevent tarnishing when they interact with one another.
+Store each piece of jewelry in an individual plastic bag.
+Keep your jewelry out of direct sunlight.
+Store your jewelry in a dry place.        </td>
+      <tr>
+          <td> HOW TO CHOOSE JEWELRY THAT SUITS MY STYLE?</td>
+          <td> <button class="button"(click)="toggleRow5(3)">{{ showRow5_3 ? 'COMPACT' : 'READ MORE' }}</button></td>
+      </tr>
+      <tr *ngIf="showRow5_3">
+        <td colspan="2">
+        The type of event or place you are going to can dictate what kind of jewelry you should wear. For example, a formal event might require more elegant pieces, while a casual outing might allow for fun and quirky jewelry
+            </td>
+      <tr>
+          <td> HOW TO CHOOSE JEWELRY AS A GIFT? </td>
+          <td> <button class="button" (click)="toggleRow5(4)">{{ showRow5_4 ? 'COMPACT' : 'READ MORE' }}</button></td>
+      </tr>
+      <tr *ngIf="showRow5_4">
+        <td colspan="2">
+        Consider the Person You Are Buying For Think about their unique style and preferences. What is their distinctive style? Is it funky, boho, retro, dark, elegant, minimalist, or something else? Choose a piece that matches what they like.
+            </td>
+  </table>
+</div>
+
+
+<div class="tques">
+  <h2 id ="technical">TECHNICAL</h2>
+  <table >
+      <tr>
+        <td>WHAT SHOULD I DO IF I'VE FORGOTTEN MY PASSWORD?<td>
+        <td> <button class="button"(click)="toggleRow6(1)">{{ showRow6_1 ? 'COMPACT' : 'READ MORE' }}</button></td>
+    </tr>
+    <tr *ngIf="showRow6_1">
+        <td colspan="2">
+        The cheapest way to ship jewelry or accessories is USPS First Class Package Service with online shipping software or the Priority Mail Flat Rate Envelope
+                </td>
+      <tr>
+          <td>HOW DO I CHANGE MY PASSWORD?<td>
+          <td> <button class="button"(click)="toggleRow6(2)">{{ showRow6_2 ? 'COMPACT' : 'READ MORE' }}</button></td>
+      </tr>
+     <tr *ngIf="showRow6_2">
+        <td colspan="2">
+        The delivery time for your jewelry order can vary depending on the specific requirements of the order and the shipping method chosen. Here are some general timelines:
+        Orders are usually processed within 1-3 business days.         </td>
+      <tr>
+     
+  </table>
+</div>
+    
+

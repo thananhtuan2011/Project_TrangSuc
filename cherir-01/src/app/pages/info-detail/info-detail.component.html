@@ -1,0 +1,68 @@
+<main>
+  <article>
+    <section style="padding-bottom: 20px">
+      <center>
+        <div class="checkout-panel">
+          <div class="panel-body">
+            <h2 class="title">Checkout here!</h2>
+
+            <div class="progress-bar">
+              <div class="step active"></div>
+              <div class="step"></div>
+              <div class="step"></div>
+              <div class="step"></div>
+            </div>
+
+            <!-- Thêm [(ngModel)] để liên kết dữ liệu với các trường form -->
+            <form class="formBox">
+              <div class="row50">
+                <div class="inputBox">
+                  <span style="text-align: left">First Name</span>
+                  <input type="text" placeholder="Your First Name" [(ngModel)]="customerData.firstName" name="firstName" />
+                </div>
+                <div class="inputBox">
+                  <span style="text-align: left">Last Name</span>
+                  <input type="text" placeholder="Your Last Name" [(ngModel)]="customerData.lastName" name="lastName" />
+                </div>
+              </div>
+
+              <div class="row50">
+                <div class="inputBox">
+                  <span style="text-align: left">Email</span>
+                  <input type="text" placeholder="Your Email" [(ngModel)]="customerData.email" name="email" />
+                </div>
+                <div class="inputBox">
+                  <span style="text-align: left">Mobile</span>
+                  <input type="text" placeholder="Your Mobile" [(ngModel)]="customerData.mobile" name="mobile" />
+                </div>
+              </div>
+
+              <div class="row50">
+                <div class="inputBox">
+                  <span style="text-align: left">City</span>
+                  <input type="text" placeholder="Your City" [(ngModel)]="customerData.city" name="city" />
+                </div>
+                <div class="inputBox">
+                  <span style="text-align: left">State</span>
+                  <input type="text" placeholder="Your State" [(ngModel)]="customerData.state" name="state" />
+                </div>
+              </div>
+
+              <div class="row100">
+                <div class="inputBox">
+                  <span style="text-align: left">Address</span>
+                  <textarea placeholder="" [(ngModel)]="customerData.address" name="address"></textarea>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+        <div class="panel-footer" style="padding-top: 20px">
+          <button class="btn btn-secondary" id="back"><a routerLink="/cart">Back</a></button>
+          <button class="btn btn-primary" id="next" (click)="goToPaymentDetail()">Next Step</button>
+        </div>
+      </center>
+    </section>
+  </article>
+</main>

@@ -1,0 +1,66 @@
+
+<div class="main-container">
+    
+  <div class="products">
+    <div class="header">
+      <div id="sort-by" bis_skin_checked="1">
+        <label class="left hidden hidden-xs"></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+        <app-filters (showCategory)="onShowCategory($event)"></app-filters>
+      </div>
+        <!-- Category-end -->
+     
+      <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+        <!-- category-products-area-start -->
+        <div class="caregory-products-area">
+          
+            <app-products-header (columnsCountChange)="onColumnsCountChange($event)"
+            (itemsCountChange)="onItemsCountChange($event)"
+      (sortChange)="onSortChange($event)"></app-products-header>
+          <div class="list-products-content" style=" padding:10px">
+            <div class="row" >
+              <div class="col-md-3" style ='padding:10px' *ngFor="let product of products">
+                <app-product-box 
+                (addToCart)="onAddToCart($event)"
+                (addToWishlist)="onAddToWishlist($event)"
+
+                [product]="product"></app-product-box>
+              </div>
+              
+            </div>
+        </div>
+        <!-- category-products-area-end -->
+        <!-- pagination-area-start -->
+        <div class="pagination-area mt-40 pt-40">
+          <div class="pagination-text">
+           
+          </div>
+          <div class="bedroom-pagination">
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li><a href="#">Page</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+        <!-- pagination-area-end -->
+      </div>
+    </div>
+
+  </div>
+
+
+
+

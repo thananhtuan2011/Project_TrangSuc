@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+/* Add the following @import rule to include Font Awesome styles */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+/* styles.css */
+
+/* animate css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+/* jquery-ui.min css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css');
+
+/* meanmenu css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/meanmenu/2.0.8/meanmenu.min.css');
+
+/* owl.carousel css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
+
+/* nivo-slider css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/nivo-slider/3.2/nivo-slider.css');
+
+/* magnific-popup css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css');
+
+/* linearicons css */
+@import url('https://cdn.linearicons.com/free/1.0.0/icon-font.min.css');
+/* In your component's styles.scss or styles.css */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+
+.mat-icon {
+    font-family: 'Material Icons';
+}

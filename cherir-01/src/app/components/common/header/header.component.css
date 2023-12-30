@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+* {
+    font-family: 'Lora', serif;
+}
+
+mat-icon {
+    font-size: 27px;
+  }
+
+.p-3 {
+    padding: 1.5rem; 
+}
+.pt-3	{padding-top: 0.75rem; /* 12px */}
+
+.divide-y {
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+}
+
+
+.pb-3 {
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #000;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+.mr-16 {
+    margin-right: 5rem; /* 64px */
+}
+.mat-badge {
+    font-family: 'Material Icons';
+}
+
+.mat-icon {
+    font-family: 'Material Icons Outlined';
+}
+/* Flex container với justify-between */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Font light */
+.font-light {
+    font-weight: lighter;
+}
+
+/* Margin bottom 2px */
+.mb-2 {
+    margin-bottom: 2px;
+}
+.py-3 {
+    padding-top: 0.75rem; /* 12px */
+    padding-bottom: 0.75rem; /* 12px */
+}
+.h-9	{height: 2.25rem; /* 36px */}
+
+.w-9	{width: 2.25rem; /* 36px */}

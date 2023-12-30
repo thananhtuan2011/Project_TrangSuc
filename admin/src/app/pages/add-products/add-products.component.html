@@ -1,0 +1,46 @@
+<main class="app-content">
+    <div class="app-title">
+      <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/list-products">List of products</a></li>
+        <li class="breadcrumb-item"><a routerLink="/add-product">Add products</a></li>
+      </ul>
+     </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+          <h3 class="tile-title">Create new products</h3>
+          <div class="tile-body">
+            <form class="row">
+              <div class="form-group col-md-3">
+                <label class="control-label">Product's name</label>
+                <input type="text" class="form-control" #name="ngModel" name="Title" id="ProductTitle" placeholder="Enter fashion title" [(ngModel)]="product.title"  />
+              </div>
+              <div class="form-group  col-md-3">
+                <label class="control-label">Quantity</label>
+                <input type="text" class="form-control" #name="ngModel" name="Quantity" id="ProductQuantity" placeholder="Enter fashion quantity" [(ngModel)]="product.quantity"  />
+              </div>
+              <div class="form-group col-md-3">
+                <label  class="control-label">Category</label>
+                <input type="text" class="form-control" #name="ngModel" name="Category" id="ProductCategory" placeholder="Enter fashion category" [(ngModel)]="product.category"  />
+              </div>
+              <div class="form-group col-md-3">
+                <label class="control-label">Price</label>
+                <input type="text" class="form-control" #name="ngModel" name="Proce" id="ProductPrice" placeholder="Enter fashion price" [(ngModel)]="product.price"  />
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label">Image product</label> <br>
+                <input type="file" class="file-input" #name="ngModel" name="fashion_image" id="fashion_image" [(ngModel)]="product.image" (change)="onFileSelected($event,product)"
+>
+              </div>
+              <div class="form-group col-md-12">
+                <label class="control-label">Product Description</label>
+                <textarea class="form-control" rows="3" placeholder="Enter product" [(ngModel)]="product.description"></textarea>
+              </div>
+            </form>
+          </div>
+          <button class="btn btn-save" (click)="postFashion()" type="submit">Save</button>
+          <a class="btn btn-cancel" routerLink="/list-products">Cancel</a>
+        </div> 
+      </div>
+    </div>
+  </main>

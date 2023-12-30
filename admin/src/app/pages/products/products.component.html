@@ -1,0 +1,85 @@
+{{errMessage}}
+<main class="app-content">
+    <div class="app-title">
+        <ul class="app-breadcrumb breadcrumb side">
+            <li class="breadcrumb-item active"><a routerLink="/list-products"><b>List of products</b></a></li>
+        </ul>
+        <div id="clock"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <div class="tile-body">
+                    <div class="row element-button">
+                        <div class="col-sm-2">
+                          <a class="btn btn-add btn-sm" [routerLink]="['/add-product']" title="Thêm"><i class="fas fa-plus"></i>
+                            Create new products</a>
+                        </div>
+                    </div>
+                        
+                    <table class="table table-hover table-bordered" id="sampleTable">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Product ID</th>
+                                <th>Product Name</th>
+                                <th>Image</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of products, let i =index">
+                                <td>{{i+1}}</td>
+                                <td>{{ product._id }}</td>
+                                <!-- Title -->
+                                <td *ngIf="!product.isEditing">{{ product.title }}</td>
+                                <td *ngIf="product.isEditing">
+                                    <input type="text" #name="ngModel" name="Title" [(ngModel)]="product.title"  />
+                                </td>
+                                <td><img [src]="product.image" alt="" width="100px;"></td>
+                                <!-- quantity -->
+                                <td *ngIf="!product.isEditing">{{ product.quantity }}</td>
+                                <td *ngIf="product.isEditing">
+                                    <input type="number" #name="ngModel" name="Quantity" [(ngModel)]="product.quantity" />
+                                </td>
+                                <!-- price -->
+                                <td *ngIf="!product.isEditing">{{ product.price }}</td>
+                                <td *ngIf="product.isEditing">
+                                    <input type="number" #name="ngModel" name="Price" [(ngModel)]="product.price" />
+                                </td>
+                                <!-- Category -->
+                                <td *ngIf="!product.isEditing">{{ product.category }}</td>
+                                <td *ngIf="product.isEditing">
+                                    <input type="text" #name="ngModel" name="Category" [(ngModel)]="product.category" />
+                                </td>
+                                <!-- Description -->
+                                <td *ngIf="!product.isEditing">{{ product.description }}</td>
+                                <td *ngIf="product.isEditing">
+                                    <textarea #name="ngModel" name="Description" [(ngModel)]="product.description"></textarea>
+                                </td>
+                                <!-- Các nút chỉnh sửa và xóa -->
+                                <td>
+                                    <!-- hàm ở bình thường -->
+                                    <button *ngIf="!product.isEditing && !selectedProduct" class="btn btn-primary btn-sm trash" type="button" title="Xóa" (click)="deleteProduct(product._id)">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button *ngIf="!product.isEditing && !selectedProduct" class="btn btn-primary btn-sm edit" type="button" title="Sửa" (click)="editProduct(product)">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <!-- hàm khi edit -->
+                                    <button *ngIf="product.isEditing" class="btn btn-primary btn-sm save" type="button" title="Lưu" (click)="saveEdit(product)">
+                                        <i class="fas fa-save"></i>
+                                     </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

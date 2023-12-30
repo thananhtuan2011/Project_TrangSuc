@@ -1,0 +1,222 @@
+<!--
+    - #HEADER
+  -->
+
+  <header class="header">
+    <div class="alert">
+      <div class="container">
+        <p class="alert-text">Free Shipping on All Orders – 48 Hours Only</p>
+      </div>
+    </div>
+  
+    <div class="header-top" data-header>
+      <div class="container">
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+  
+        <div class="input-wrapper">
+          <input
+            type="search"
+            name="search"
+            placeholder="Search product by name"
+            class="search-field"
+            [(ngModel)]="partialProductName" 
+          />
+  
+          <button class="search-submit" aria-label="search" (click)="searchProduct()">
+            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+  
+        <a href="#" class="logo">
+          <img
+            src="./assets/img/name.png"
+            width="250"
+            height="100"
+            alt="Glowing"
+          />
+        </a>
+  
+        <div class="header-actions">
+          <button class="header-action-btn" aria-label="user" (click)="Login()" >
+            <mat-icon style="color:gray; padding-top: 4px; ">person_outline</mat-icon>
+          </button>
+  
+          <button mat-icon-button [matMenuTriggerFor]="Wmenu"  class="header-action-btn" aria-label="wishlist item">
+            <!--<data class="btn-text" value="0">$0.00</data>-->
+  
+            <mat-icon class="material-icons-outlined icon-display"
+            [matBadge]="itemsQuantityW"
+            [matBadgeHidden]="!itemsQuantityW"
+           >favorite_border</mat-icon>
+  
+            
+          </button>
+          <mat-menu style="font-family: 'Lora';" #Wmenu="matMenu">
+            <div class="p-3 divide-y">
+              <div class="pb-3 flex justify-between">
+                <span class="mr-16">{{wishlist.items.length}} items</span>
+              </div>
+              <div  *ngIf="wishlist.items.length">
+                <div *ngFor="let item of wishlist.items" class="py-3">
+                  <div class="flex justify-between font-light mb-2">
+                     <span (click)="navigateToProduct(item._id)">{{item.name}}</span>
+                    <span><strong>{{ item.price | currency}}</strong></span>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="pt-3 flex justify-between">
+                <button (click)="onClearWishlist()">
+                  <mat-icon>clear</mat-icon>
+                </button>
+  
+              </div>
+            </div>
+          </mat-menu>
+  
+          <button mat-icon-button [matMenuTriggerFor]="menu" class="header-action-btn" aria-label="cart item">
+            <!--<data class="btn-text" value="0">$0.00</data>-->
+  
+            <mat-icon class="material-icons-outlined icon-display"
+            [matBadge]="itemsQuantity"
+            [matBadgeHidden]="!itemsQuantity">shopping_cart</mat-icon>
+  
+            
+          </button>
+          <mat-menu style="font-family: 'Lora';" #menu="matMenu">
+            <div class="p-3 divide-y">
+              <div class="pb-3 flex justify-between">
+                <span class="mr-16">{{cart.items.length}} items</span>
+                <a routerLink="cart">View cart</a>
+              </div>
+              <div  *ngIf="cart.items.length">
+                <div *ngFor="let item of cart.items" class="py-3">
+                  <div class="flex justify-between font-light mb-2">
+                     <span (click)="navigateToProduct(item._id)">{{item.name}} x {{item.quantity}}</span>
+                    <span><strong>{{ item.price | currency}}</strong></span>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="flex justify-between py-3">
+                Total: 
+                <span><strong>{{ getTotal(cart.items) | currency}}</strong></span>
+              </div>
+              <div class="pt-3 flex justify-between">
+                <button (click)="onClearCart()">
+                  <mat-icon>remove_shopping_cart</mat-icon>
+                </button>
+                <button routerLink="cart"
+                >
+                <mat-icon>payment</mat-icon>
+  
+                </button>
+  
+              </div>
+            </div>
+          </mat-menu>
+        </div>
+        <div class="container">
+          <nav class="navbar">
+            <ul class="navbar-list">
+              <!-- Home page -->
+              <li class="menu-category">
+                <a routerLink="home" class="navbar-link has-after">Home</a>
+              </li>
+              <!-- Product page -->
+              <li class="menu-category">
+                <a routerLink="products" class="navbar-link has-after">Jewelry</a>
+                <div class="dropdown-panel">
+
+                  <ul class="dropdown-panel-list">
+                    <li style="padding-bottom: 20px">
+                      <a  routerLink="products"><b>Categories</b></a>
+                    </li>
+                    <li class="pannel-list-item">
+                      <a  routerLink="products">New Arrivals</a>
+                    </li>
+                    <li class="pannel-list-item">
+                      <a  routerLink="products">Earrings</a>
+                    </li>
+                    <li class="pannel-list-item">
+                      <a href="#" routerLink="products">Bracelets</a>
+                    </li>
+                    <li class="pannel-list-item">
+                      <a  routerLink="products">Rings</a>
+                    </li>
+                    <li class="pannel-list-item">
+                      <a  routerLink="products">Necklaces</a>
+                    </li>
+                  </ul>
+  
+                  <ul class="dropdown-panel-list">
+                    <li style="padding-bottom: 20px">
+                      <a  routerLink="products"><b>Personalized Jewelry</b></a>
+                    </li>
+                    <li class="pannel-list-item">
+                      <a  routerLink="products">Initial Jewelry</a>
+                    </li>
+                    <li class="pannel-list-item">
+                      <a href="#" routerLink="products">Engravable Styles</a>
+                    </li>
+                    <li class="pannel-list-item">
+                      <a  routerLink="products">Birthstones</a>
+                    </li>
+                    <li class="pannel-list-item">
+                      <a  routerLink="products">Charms</a>
+                    </li>
+                    <li class="pannel-list-item">
+                      <a  routerLink="products">Storage & Accessories</a>
+                    </li>
+                  </ul>
+  
+                  <ul class="dropdown-panel-list">
+                    <li style="padding-bottom: 20px">
+                      <a  routerLink="products"><b>Spotlight Deals</b></a>
+                    </li>
+                    <li class="pannel-list-item">
+                      <a  routerLink="products">Fashion Jewelry</a>
+                    </li>
+                    <li class="pannel-list-item">
+                      <a routerLink="products">25% Off Fine, Demi & Watches</a>
+                    </li>
+                  </ul>
+  
+                  <ul class="dropdown-panel-list">
+                    <li class="pannel-list-item">
+                      <img
+                        src="./assets/img/cate.png"
+                        style="border-radius: 30px"
+                      />
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <!-- About-us page -->
+              <li class="menu-category">
+                <a href="about-us" class="navbar-link has-after">About Us</a>
+              </li>
+              <!-- FAQ page -->
+              <li class="menu-category">
+                <a href="faq" class="navbar-link has-after">FAQ</a>
+              </li>
+              <!-- Contact page -->
+              <li class="menu-category">
+                <a routerLink="contact" class="navbar-link has-after">Contact</a>
+              </li>
+              <!-- Blog page -->
+              <li class="menu-category">
+                <a href="blog" class="navbar-link has-after">Blog</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  
